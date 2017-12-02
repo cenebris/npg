@@ -281,6 +281,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   letter_opener
+  pry
   pry-rails
   rails (= 5.1.1)
   rails-erd
@@ -295,4 +296,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.15.3
+   1.16.0
