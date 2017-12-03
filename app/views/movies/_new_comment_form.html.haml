@@ -1,0 +1,10 @@
+%hr
+%h2 New Comment
+%div.container
+  %div.row.justify-content-md-center
+    %div.col-8
+      = form_for(new_comment, url: movie_comments_path(new_comment, movie_id: movie.id), method: :post) do |f|
+        %div.form-group
+          = f.text_field :text, class: 'form-control'
+        %div.form-group
+        = f.submit :Submit, class: 'btn btn-success'

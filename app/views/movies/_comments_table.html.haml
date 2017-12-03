@@ -1,0 +1,15 @@
+%hr
+  %h3= 'Comments'
+  %table.table.table-striped
+    %tbody
+      - comments.each_with_index do |comment, i|
+        %tr
+          %td= i + 1
+          %td
+            %strong
+              = comment.email
+            = comment.created
+          %td
+            = comment.text
+          %td
+            = link_to 'x', movie_comment_path(movie_id: movie.id, comment_id: comment.id), method: :delete if comment.user == current_user

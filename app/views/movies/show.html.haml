@@ -1,5 +1,8 @@
-%h1= @movie.title
+%h1= movie.title
 .jumbotron
-  = @movie.description
+  = movie.description
 - if user_signed_in?
-  %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
+  %p= link_to 'Email me details about this movie', send_info_movie_path(movie), class: 'btn btn-sm btn-default'
+%div.well
+  = render partial: 'movies/new_comment_form', locals: { new_comment: new_comment, movie: movie } if new_comment
+  = render partial: 'movies/comments_table', locals: { comments: comments, movie: movie } if comments.any?
