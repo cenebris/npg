@@ -1,0 +1,27 @@
+- cache 'view_top_commenters' do
+
+  - cache 'table_top_commenters_this_week' do
+    %h1 Top Commenters (This Week)
+    %table.table.table-striped
+      %tbody
+        - top_commenters_this_week.each_with_index do |commenter, i|
+          %tr
+            %td= i + 1
+            %td
+              = commenter[:email]
+            %td
+              = commenter[:comments_count]
+
+  - cache 'table_top_commenters_all_time' do
+    %h1 Top Commenters (All Time)
+    %table.table.table-striped
+      %tbody
+        - top_commenters_all_time.each_with_index do |commenter, i|
+          %tr
+            %td= i + 1
+            %td
+              = commenter[0]
+            %td
+              = commenter[1]
+
+  %h6 Top commenters page is updated once in a day

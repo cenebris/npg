@@ -7,9 +7,9 @@ Rails.application.routes.draw do
       get "movies"
     end
   end
+  get 'top_commenters', to: 'top_commenters#show'
   resources :movies, only: [:index, :show] do
     resources :comments, only: [:create, :destroy]
-    # resources :comments
     member do
       get :send_info
     end
